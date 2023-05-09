@@ -1,3 +1,4 @@
+// hai
 import java.util.Scanner;
 
 class Main {
