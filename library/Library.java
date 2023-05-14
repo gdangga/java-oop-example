@@ -7,6 +7,9 @@ class Library {
   public void addMember(Member member) {
     this.members.add(member);
   }
+    public void addBook(Book book){
+    this.books.add(book);
+  }
 
   public Boolean isMemberIdExist(String id) {
     Boolean isExist = false;
