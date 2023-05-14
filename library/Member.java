@@ -1,27 +1,27 @@
 import java.util.ArrayList;
 
-abstract class Person {
-  public String fullName;
+abstract class Orang {
+  public String name;
 
-  public Person(String fullName) {
-    this.fullName = fullName;
+  public Orang(String name) {
+    this.name = name;
   }
 
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
+  public void setname(String name) {
+    this.name = name;
   }
 
-  public String getFullName() {
-    return fullName;
+  public String getname() {
+    return name;
   }
 }
 
-abstract class LibraryMember extends Person {
+abstract class LibraryMember extends Orang {
   public String id;
   public ArrayList<Book> borrowedBooks = new ArrayList<Book>();
 
-  public LibraryMember(String id, String fullName) {
-    super(fullName);
+  public LibraryMember(String id, String name) {
+    super(name);
     this.id = id;
   }
 
@@ -39,8 +39,8 @@ abstract class LibraryMember extends Person {
 class Member extends LibraryMember {
   public String name;
 
-public Member(String id, String fullName) {
-    super(id, fullName);
+public Member(String id, String name) {
+    super(id, name);
   }
 
   public Member() {
