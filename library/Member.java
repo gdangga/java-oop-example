@@ -1,51 +1,9 @@
 import java.util.ArrayList;
 
-abstract class Orang {
-  public String name;
-
-  public Orang(String name) {
-    this.name = name;
-  }
-
-  public void setname(String name) {
-    this.name = name;
-  }
-
-  public String getname() {
-    return name;
-  }
-}
-
-abstract class LibraryMember extends Orang {
+abstract class LibraryMember {
   public String id;
-  public ArrayList<Book> borrowedBooks = new ArrayList<Book>();
-
-  public LibraryMember(String id, String name) {
-    super(name);
-    this.id = id;
-  }
-
-  public LibraryMember() {
-    super("");
-  }
-
-  public abstract void receiveBook(Book book);
-
-  public abstract void giveBook(Book book);
-
-  public abstract Book getBookById(String id);
-}
-
-class Member extends LibraryMember {
   public String name;
-
-public Member(String id, String name) {
-    super(id, name);
-  }
-
-  public Member() {
-    super("", "");
-  }
+  public ArrayList<Book> borrowedBooks = new ArrayList<Book>();
 
   public void receiveBook(Book book) {
     this.borrowedBooks.add(book);
@@ -57,12 +15,46 @@ public Member(String id, String name) {
 
   public Book getBookById(String id) {
     for (Book book : this.borrowedBooks) {
-      if (book.id.equals(id)) {
+      if (book.getId().equals(id)) {
         return book;
       }
-  }
+    }
     return null;
   }
-    
-  
+
+  public abstract Object getId();
+}
+
+class Member extends LibraryMember {
+  public Member() {
+  }
+
+  @Override
+  public Object getId() {
+    return this.id;
+  }
+}
+
+class Student extends LibraryMember {
+  private String studentId;
+
+  public Student(String id, String name, String studentId) {
+    this.id = id;
+    this.name = name;
+    this.studentId = studentId;
+  }
+
+  @Override
+  public void receiveBook(Book book) {
+    if (borrowedBooks.size() < 5) {
+      borrowedBooks.add(book);
+    } else {
+      System.out.println("Batas peminjaman buku telah mencapai maksimum");
+    }
+  }
+
+  @Override
+  public Object getId() {
+    return this.studentId;
+  }
 }

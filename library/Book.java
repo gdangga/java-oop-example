@@ -1,16 +1,20 @@
 class Book {
-  public String id;
-  public String title;
-  
-  public void setId(String bookId) {
-    this.id = bookId;
+  private String id;
+  private String title;
+
+  public String getId() {
+    return id;
   }
-  
-  public void setId(int bookId) {
-    this.id = Integer.toString(bookId);
+
+  public void setId(String id) {
+    this.id = id;
   }
-  
-  public Object getId() {
-    return null;
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
   }
 }
