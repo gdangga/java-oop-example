@@ -22,7 +22,7 @@ abstract class LibraryMember {
     return null;
   }
 
-  public abstract Object getId();
+  public abstract String getId();
 }
 
 class Member extends LibraryMember {
@@ -30,7 +30,7 @@ class Member extends LibraryMember {
   }
 
   @Override
-  public Object getId() {
+  public String getId() {
     return this.id;
   }
 }

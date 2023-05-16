@@ -26,13 +26,13 @@ class Library {
     for (Book b : this.books) {
       if (b.getId().equals(book.getId())) {
         System.out.println("Id buku ini sudah ada: " + book.getId());
-      } else{
-        this.books.add(book);
-        System.out.println("Buku dengan ID" + book.getId() + " berjudul " + book.getTitle() + " berhasil ditambahkan");
         return;
       }
+        
+        
     }
-    
+    System.out.println("Buku dengan ID" + book.getId() + " berjudul " + book.getTitle() + " berhasil ditambahkan");
+        this.books.add(book);
   }
 
   public void setBooks(ArrayList<Book> books) {
