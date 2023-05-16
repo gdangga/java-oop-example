@@ -35,26 +35,6 @@ class Member extends LibraryMember {
   }
 }
 
-class Student extends LibraryMember {
-  private String studentId;
 
-  public Student(String id, String name, String studentId) {
-    this.id = id;
-    this.name = name;
-    this.studentId = studentId;
-  }
 
-  @Override
-  public void receiveBook(Book book) {
-    if (borrowedBooks.size() < 5) {
-      borrowedBooks.add(book);
-    } else {
-      System.out.println("Batas peminjaman buku telah mencapai maksimum");
-    }
-  }
 
-  @Override
-  public Object getId() {
-    return this.studentId;
-  }
-}
